@@ -28,7 +28,7 @@ while true ; do
     if [[ $percent == "100" ]]; then clear; fi
     if [[ $percent == "0" ]]; then clear; fi
 
-    percent=$((100*$tracker2/$duration))
+    if [[ $duration > "0" ]]; then percent=$((100*$tracker2/$duration)); fi
     
     tput cup $((height / 2 - 4)) $(((width / 2) - (length / 2) - 17))
     tput setaf 160; tput smul; echo "Spotify Player                                 $playingstate"; tput sgr0
